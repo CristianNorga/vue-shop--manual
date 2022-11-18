@@ -1,20 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import LoginVue from '../views/Login.vue';
+// import LoginVue from '../pages/Login.vue';
 
-// pendiente en agregar valor default
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{
 			path: '/',
+			name: 'home',
+			component: () => import('../pages/Home.vue'),
+		},
+		{
+			path: '/login',
 			name: 'login',
-			component: LoginVue,
+			component: () => import('../pages/Login.vue'),
 		},
 		{
 			path: '/recovery',
 			name: 'recovery',
-			component: () => import('../views/RecoveryPassword.vue'),
+			component: () => import('../pages/RecoveryPassword.vue'),
+		},
+		{
+			path: '/:pathMatch(.*)',
+			name: 'notFound',
+			component: () => import('../pages/NotFound.vue'),
 		},
 	],
 });

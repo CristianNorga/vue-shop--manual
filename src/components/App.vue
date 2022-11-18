@@ -1,5 +1,6 @@
 <script setup>
 // import components
+  import "../styles/global.sass"
 </script>
 
 <template>

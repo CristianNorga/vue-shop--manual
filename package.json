@@ -12,7 +12,8 @@
   "author": "Cristian David Noreña Saldarriaga <cristian.rraga95@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^2.3.1",

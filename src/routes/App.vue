@@ -1,14 +1,15 @@
 <script setup>
 // import components
+  import { RouterLink, RouterView } from "vue-router";
+
   import "../styles/global.sass"
   import LayoutVue from "../containers/Layout.vue";
-  import LoginVue from "../containers/Login.vue";
 </script>
 
 <template>
   <LayoutVue>
     <template #default>
-      <LoginVue/>
+      <RouterView/>
     </template>
   </LayoutVue>
 </template>

@@ -1,8 +1,14 @@
 <script setup>
 // import components
   import "../styles/global.sass"
+  import LayoutVue from "../containers/Layout.vue";
+  import LoginVue from "../containers/Login.vue";
 </script>
 
 <template>
-  <h1>Hola Mundo!, prueba de escucha 5</h1>
+  <LayoutVue>
+    <template #default>
+      <LoginVue/>
+    </template>
+  </LayoutVue>
 </template>

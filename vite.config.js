@@ -23,7 +23,7 @@ export default defineConfig({
 	server: {
 		port: 3005,
 		strictPort: true,
-		open: "/public/index.html"
+		// open: "/public/index.html"
 	}
 	// build: {
 	// 	rollupOptions: {

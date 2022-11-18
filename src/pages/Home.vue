@@ -1,3 +1,7 @@
+<script setup>
+  import HeaderVue from "../components/Header.vue";
+</script>
+
 <template>
-  <h1>Vue Shop</h1>
+  <HeaderVue/>
 </template>

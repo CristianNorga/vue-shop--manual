@@ -16,9 +16,34 @@ const router = createRouter({
 			component: () => import('../pages/Login.vue'),
 		},
 		{
-			path: '/recovery',
-			name: 'recovery',
+			path: '/password-recovery',
+			name: 'passwordRecovery',
 			component: () => import('../pages/RecoveryPassword.vue'),
+		},
+		{
+			path: '/create-account',
+			name: 'createAccount',
+			component: () => import('../pages/CreateAccount.vue'),
+		},
+		{
+			path: '/new-password',
+			name: 'newPassword',
+			component: () => import('../pages/NewPassword.vue'),
+		},
+		{
+			path: '/my-account',
+			name: 'myAccount',
+			component: () => import('../pages/MyAccount.vue'),
+		},
+		{
+			path: '/orders',
+			name: 'orders',
+			component: () => import('../pages/Orders.vue'),
+		},
+		{
+			path: '/checkout',
+			name: 'checkout',
+			component: () => import('../pages/Checkout.vue'),
 		},
 		{
 			path: '/:pathMatch(.*)',

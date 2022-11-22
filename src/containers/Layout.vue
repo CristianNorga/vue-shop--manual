@@ -1,6 +1,6 @@
 <script setup>
 // import components
-// import "../styles/global.sass"
+// import "@styles/global.sass"
 </script>
 
 <!-- <script setup>

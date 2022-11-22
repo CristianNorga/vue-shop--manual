@@ -12,19 +12,23 @@ export default defineConfig({
 		vue(),
 		vueJsx(),
 		legacy({
-			targets: ["defaults", "not IE 11"],
+			targets: ['defaults', 'not IE 11'],
 		}),
 	],
 	resolve: {
 		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
+			'@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+			'@containers': fileURLToPath(new URL('./src/containers', import.meta.url)),
+			'@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
+			'@icons': fileURLToPath(new URL('./src/assets/icons', import.meta.url)),
+			'@logos': fileURLToPath(new URL('./src/assets/logos', import.meta.url)),
 		},
 	},
 	server: {
 		port: 3005,
 		strictPort: true,
 		// open: "/public/index.html"
-	}
+	},
 	// build: {
 	// 	rollupOptions: {
 	// 		input: {

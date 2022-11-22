@@ -1,3 +1,14 @@
+<script setup>
+  import { ref } from "vue";
+
+  import MenuDesk from "@components/MenuDesk.vue"
+
+  let toogle = ref(false);
+  function setToggle(){
+    toogle.value = !toogle.value
+  }
+</script>
+
 <template>
   <nav>
     <img src="@icons/icon_menu.svg" alt="menu" class="menu">
@@ -29,13 +40,17 @@
 
     <div class="navbar-right">
       <ul>
-        <li class="navbar-email">platzi@example.com</li>
+        <li class="navbar-email" @click="setToggle">
+          platzi@example.com
+        </li>
         <li class="navbar-shopping-cart">
           <img src="@icons/icon_shopping_cart.svg" alt="shopping cart">
           <div>2</div>
         </li>
       </ul>
     </div>
+
+    <MenuDesk v-show="toogle"/>
   </nav>
 </template>
 
@@ -84,6 +99,7 @@
     color: var(--very-light-pink);
     font-size: var(--sm);
     margin-right: 12px;
+    cursor: pointer;
   }
   .navbar-shopping-cart {
     position: relative;

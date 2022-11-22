@@ -1,3 +1,11 @@
+<script setup>
+  import { reactive } from 'vue'
+  const cart = reactive([]);
+  function setCart() {
+    cart.push('producto')
+  }
+</script>
+
 <template>
   <div class="ProductItem">
     <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
@@ -6,7 +14,7 @@
         <p>$120,00</p>
         <p>Bike</p>
       </div>
-      <figure>
+      <figure @click="setCart">
         <img src="@icons/bt_add_to_cart.svg" alt="">
       </figure>
     </div>
@@ -31,6 +39,7 @@
   }
   .product-info figure {
     margin: 0;
+    cursor: pointer;
   }
   .product-info figure img {
     width: 35px;

@@ -3,7 +3,7 @@
 
   import MenuDesk from "@components/MenuDesk.vue"
 
-  let toogle = ref(false);
+  const toogle = ref(false);
   function setToggle(){
     toogle.value = !toogle.value
   }

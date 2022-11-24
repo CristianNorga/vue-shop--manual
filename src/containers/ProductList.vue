@@ -18,7 +18,7 @@
 <template>
   <section class="main-container" v-my-directive>
     <div class="cards-container">
-      <ProductItemVue v-for="product in products" :key="product.id"/>
+      <ProductItemVue v-for="product in products" :key="product.id" :product="product"/>
     </div>
   </section>
 </template>

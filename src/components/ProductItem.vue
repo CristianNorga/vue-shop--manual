@@ -4,15 +4,27 @@
   function setCart() {
     cart.push('producto')
   }
+  const props = defineProps({
+    product: {
+      type: Object,
+      default: {
+        images: [
+          'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+        ],
+        title: 'Bike',
+        price: '120,00'
+      }
+    }
+  })
 </script>
 
 <template>
   <div class="ProductItem">
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+    <img :src="product.images[0] || 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" :alt="product.title">
     <div class="product-info">
       <div>
-        <p>$120,00</p>
-        <p>Bike</p>
+        <p>$ {{product.price}}</p>
+        <p>{{product.title}}</p>
       </div>
       <figure @click="setCart">
         <img src="@icons/bt_add_to_cart.svg" alt="">

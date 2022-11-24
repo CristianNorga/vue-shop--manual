@@ -1,28 +1,24 @@
 <script setup>
+  import { ref } from 'vue';
+
   import ProductItemVue from '@components/ProductItem.vue';
-  import axios from "axios";
-  import {ref} from "vue";
+  import hk_products from '@hooks/getProducts.js'
 
-  const API = "https://api.escuelajs.co/api/v1/products"
-
-  const products = ref([])
-  function setProducts(data){
-    products.value = data;
-  }
+  const products = hk_products.products;
+  
+  const API = 'https://api.escuelajs.co/api/v1/products';
 
   const vMyDirective = {
     beforeMount: async () => {
-      const response = await axios(API)
-      setProducts(response.data)
+      const reponse = await hk_products.getProducts(API);
     }
   }
-
 </script>
 
 <template>
   <section class="main-container" v-my-directive>
     <div class="cards-container">
-      <ProductItemVue v-for="product in products"/>
+      <ProductItemVue v-for="product in products" :key="product.id"/>
     </div>
   </section>
 </template>

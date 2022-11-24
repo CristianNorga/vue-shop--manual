@@ -19,6 +19,7 @@ export default defineConfig({
 		alias: {
 			'@components': fileURLToPath(new URL('./src/components', import.meta.url)),
 			'@containers': fileURLToPath(new URL('./src/containers', import.meta.url)),
+			'@hooks': fileURLToPath(new URL('./src/hooks', import.meta.url)),
 			'@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
 			'@icons': fileURLToPath(new URL('./src/assets/icons', import.meta.url)),
 			'@logos': fileURLToPath(new URL('./src/assets/logos', import.meta.url)),
@@ -26,7 +27,7 @@ export default defineConfig({
 	},
 	server: {
 		port: 3005,
-		strictPort: true,
+		strictPort: false,
 		// open: "/public/index.html"
 	},
 	// build: {

@@ -1,20 +1,32 @@
+<script setup>
+  function onSubmit({target}){
+    const formData = new FormData(target)
+    const data = {
+      username: formData.get('email'),
+      password: formData.get('password'),
+    }
+    console.log(data);
+  }
+</script>
+
 <template>
 	<div class="login">
     <div class="form-container">
       <img src="@logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-      <form action="/" class="form">
+      <form action="/" class="form" @submit.prevent="handleSubmit">
         <label for="email" class="label">Email address</label>
-        <input type="text" id="email" placeholder="platzi@example.cm" class="input input-email">
+        <input type="text" name="email" placeholder="platzi@example.cm" class="input input-email">
 
         <label for="password" class="label">Password</label>
-        <input type="password" id="password" placeholder="*********" class="input input-password">
+        <input type="password" name="password" placeholder="*********" class="input input-password">
 
         <input type="submit" value="Log in" class="primary-button login-button">
         <a href="/">Forgot my password</a>
       </form>
 
-      <button class="secondary-button signup-button">Sign up</button>
+      <button class="secondary-button signup-button"
+      type="button">Sign up</button>
     </div>
   </div>
 </template>

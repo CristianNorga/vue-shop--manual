@@ -1,7 +1,7 @@
 <script setup>
   // import { reactive } from 'vue'
   // import { defineProps } from 'vue';
-  import initialState from '@hooks/initialState.js'
+  import {addCart} from '@hooks/initialState.js'
 
   const props = defineProps({
     product: {
@@ -26,7 +26,7 @@
         <p>$ {{product.price}}</p>
         <p>{{product.title}}</p>
       </div>
-      <figure @click="initialState.addCart(product)">
+      <figure @click="addCart(product)">
         <img src="@icons/bt_add_to_cart.svg" alt="">
       </figure>
     </div>

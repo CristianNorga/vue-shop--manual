@@ -1,6 +1,9 @@
 <script setup>
-  import ShoppingCartItemVue from '@components/ShoppingCartItem.vue';
-  import initialState from '@hooks/initialState';
+  
+  import {getCart,totalCart} from '@hooks/initialState';
+
+  import OrderItem from "@components/OrderItem.vue"
+
 </script>
 
 <template>
@@ -8,15 +11,15 @@
     <div class="my-order-container">
       <h1 class="title">My order</h1>
 
-      <div class="my-order-content">
-        <ShoppingCartItemVue v-for="item in initialState.cart.value"/>
+      <div v-show="getCart.length > 0" class="my-order-content">
+        <OrderItem v-for="item in getCart" :product="item" :key="`orderItem-${item.id}`"/>
 
         <div class="order">
           <p>
             <span>03.25.21</span>
-            <span>6 articles</span>
+            <span>{{`${getCart.length} ${getCart.length > 1 ?'articles' : 'article'}`}}</span>
           </p>
-          <p>$560.00</p>
+          <p>${{totalCart}}</p>
         </div>
 
         <button className="primary-button">

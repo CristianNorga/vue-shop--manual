@@ -1,11 +1,25 @@
+<script setup>
+  import {removeCart} from "@hooks/initialState.js"
+
+  const props = defineProps({
+    product: {
+      default: {
+        images: ["https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"],
+        title: "Bike",
+        price: "30,00"
+      }
+    }
+  });
+</script>
+
 <template>
   <div class="OrderItem">
     <figure>
-      <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+      <img :src="product.images[0]" :alt="product.title">
     </figure>
-    <p>Bike</p>
-    <p>$30,00</p>
-    <img src="@icons/icon_close.png" alt="close">
+    <p>{{product.title}}</p>
+    <p>${{product.price}}</p>
+    <img src="@icons/icon_close.png" alt="close" @click="removeCart(product)" class="close">
   </div>
 </template>
 
@@ -32,5 +46,8 @@
 .OrderItem p:nth-child(3) {
   font-size: var(--md);
   font-weight: bold;
+}
+.OrderItem .close{
+  cursor: pointer;
 }
 </style>

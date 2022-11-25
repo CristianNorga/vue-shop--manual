@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from "vue";
-  import initialState from '@hooks/initialState.js'
+  import {getCart} from '@hooks/initialState.js'
 
   import MyOrderVue from "@containers/MyOrder.vue";
   import MenuDesk from "@components/MenuDesk.vue"
@@ -56,7 +56,7 @@
         </li>
         <li class="navbar-shopping-cart" @click="setToggleorder">
           <img src="@icons/icon_shopping_cart.svg" alt="shopping cart">
-          <div v-show="initialState.cart.value.length > 0">{{initialState.cart.value.length}}</div>
+          <div v-show="getCart.length > 0">{{getCart.length}}</div>
         </li>
       </ul>
     </div>
@@ -115,6 +115,7 @@
   }
   .navbar-shopping-cart {
     position: relative;
+    cursor: pointer;
   }
   .navbar-shopping-cart div {
     width: 16px;

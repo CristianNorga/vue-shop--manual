@@ -18,6 +18,7 @@
 
 <style scoped>
 .desktop-menu {
+  background-color: #ffffff;
   width: 100px;
   height: auto;
   border: 1px solid var(--very-light-pink);

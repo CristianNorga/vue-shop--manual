@@ -2,7 +2,7 @@
   import { ref } from 'vue';
 
   import ProductItemVue from '@components/ProductItem.vue';
-  import hk_products from '@hooks/getProducts.js'
+  import hk_products from '@hooks/getProducts.js';
 
   const products = hk_products.products;
   
@@ -12,7 +12,7 @@
     beforeMount: async () => {
       const reponse = await hk_products.getProducts(API);
     }
-  }
+  };
 </script>
 
 <template>

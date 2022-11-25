@@ -1,13 +1,16 @@
 <script setup>
   import ShoppingCartItemVue from '@components/ShoppingCartItem.vue';
+  import initialState from '@hooks/initialState';
 </script>
 
 <template>
-  <div class="my-order">
+  <div class="MyOrder">
     <div class="my-order-container">
       <h1 class="title">My order</h1>
 
       <div class="my-order-content">
+        <ShoppingCartItemVue v-for="item in initialState.cart.value"/>
+
         <div class="order">
           <p>
             <span>03.25.21</span>
@@ -16,7 +19,9 @@
           <p>$560.00</p>
         </div>
 
-        <ShoppingCartItemVue/>
+        <button className="primary-button">
+					Checkout
+				</button>
 
       </div>
     </div>
@@ -24,11 +29,17 @@
 </template>
 
 <style scoped>
-.my-order {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  place-items: center;
+.MyOrder {
+  width: 360px;
+	padding: 24px;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+	background-color: white;
+	top: 60px;
+	bottom: 0;
+	border-radius: 6px;
+	border: 1px solid var(--very-light-pink);
 }
 .title {
   font-size: var(--lg);
@@ -68,6 +79,24 @@
 .order p:nth-child(2) {
   text-align: end;
   font-weight: bold;
+}
+
+.primary-button {
+	background-color: var(--hospital-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--white);
+	width: 100%;
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	height: 50px;
+}
+
+@media (max-width: 640px) {
+	.MyOrder {
+		width: 100%;
+	}
 }
 
 </style>

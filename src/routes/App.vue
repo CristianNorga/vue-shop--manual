@@ -2,7 +2,7 @@
 // import components
   import { RouterLink, RouterView } from "vue-router";
 
-  import "@styles/global.sass"
+  import "@styles/global.sass";
   import LayoutVue from "@containers/Layout.vue";
 </script>
 

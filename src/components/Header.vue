@@ -1,12 +1,23 @@
 <script setup>
   import { ref } from "vue";
+  import initialState from '@hooks/initialState.js'
 
+  import MyOrderVue from "@containers/MyOrder.vue";
   import MenuDesk from "@components/MenuDesk.vue"
 
   const toogle = ref(false);
+  const toogleOrder = ref(false);
+
   function setToggle(){
+    toogleOrder.value = false
     toogle.value = !toogle.value
   }
+
+  function setToggleorder() {
+    toogle.value = false
+    toogleOrder.value = !toogleOrder.value
+  }
+  
 </script>
 
 <template>
@@ -43,14 +54,15 @@
         <li class="navbar-email" @click="setToggle">
           platzi@example.com
         </li>
-        <li class="navbar-shopping-cart">
+        <li class="navbar-shopping-cart" @click="setToggleorder">
           <img src="@icons/icon_shopping_cart.svg" alt="shopping cart">
-          <div>2</div>
+          <div v-show="initialState.cart.value.length > 0">{{initialState.cart.value.length}}</div>
         </li>
       </ul>
     </div>
 
     <MenuDesk v-show="toogle"/>
+    <MyOrderVue v-show="toogleOrder"/>
   </nav>
 </template>
 

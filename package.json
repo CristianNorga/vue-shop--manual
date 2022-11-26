@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "vite --host",
-    "build": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "Cristian David Noreña Saldarriaga <cristian.rraga95@hotmail.com>",
